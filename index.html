@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Подключение файла стилей -->
+</head>
+<body>
+    <div class="main-container journey-page">
+        <h1 class="header-title">Виртуальный помощник "Профориентационный навигатор"</h1>
+        <p class="journey-subtitle">Выберите этап и режим. Следующий этап открывается после успешной сдачи экзамена предыдущего.</p>
+
+        <div class="stages-line">
+            <article class="stage-card" data-stage="1">
+                <img src="images/главная/photo1.jpg" alt="Школа" class="stage-image">
+                <h2 class="stage-title">Школа</h2>
+                <div class="stage-actions">
+                    <button type="button" class="stage-btn" data-stage="1" data-mode="learn">Пройти обучение</button>
+                    <button type="button" class="stage-btn" data-stage="1" data-mode="exam">Сдать экзамен</button>
+                </div>
+                <p class="stage-lock-message"></p>
+            </article>
+
+            <article class="stage-card" data-stage="2">
+                <img src="images/главная/photo2.jpg" alt="Колледж" class="stage-image">
+                <h2 class="stage-title">Колледж</h2>
+                <div class="stage-actions">
+                    <button type="button" class="stage-btn" data-stage="2" data-mode="learn">Пройти обучение</button>
+                    <button type="button" class="stage-btn" data-stage="2" data-mode="exam">Сдать экзамен</button>
+                </div>
+                <p class="stage-lock-message"></p>
+            </article>
+
+            <article class="stage-card" data-stage="3">
+                <img src="images/главная/photo3.jpg" alt="Завод" class="stage-image">
+                <h2 class="stage-title">Завод</h2>
+                <div class="stage-actions">
+                    <button type="button" class="stage-btn" data-stage="3" data-mode="learn">Пройти обучение</button>
+                    <button type="button" class="stage-btn" data-stage="3" data-mode="exam">Сдать экзамен</button>
+                </div>
+                <p class="stage-lock-message"></p>
+            </article>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

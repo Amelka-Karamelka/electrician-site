@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты экзамена</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Подключение файла стилей -->
+</head>
+<body>
+    <!-- Основной контейнер для отображения результатов -->
+    <div class="results-container">
+        <!-- Заголовок страницы результатов -->
+        <h1>Результаты экзамена</h1>
+
+        <!-- Элемент для отображения текста результатов -->
+        <p id="result-text"></p>
+
+        <!-- Контейнер с изображением сертификата -->
+        <div id="certificate" style="display: none;">
+            <!-- Изображение аттестата, отображается при успешном прохождении -->
+            <img src="images/этап1/att.jpg" alt="Аттестат" class="result-image">
+        </div>
+
+        <!-- Контейнер с кнопками действий -->
+        <div class="buttons">
+            <!-- Кнопка для повторного прохождения этапа -->
+            <button id="retry-btn" class="btn">Пройти экзамен ещё раз</button>
+
+            <!-- Кнопка для перехода на следующий этап, изначально скрыта -->
+            <button id="next-btn" class="btn" style="display: none;">Перейти на уровень выше</button>
+        </div>
+    </div>
+
+    <!-- Скрипт для обработки логики результатов -->
+    <script src="js/results1.js"></script>
+</body>
+</html>

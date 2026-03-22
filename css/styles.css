@@ -1,0 +1,746 @@
+/* Основные стили */
+body {
+    font-family: 'Core Sans A', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffeed9; /* Светлый фон */
+    color: #232427; /* Тёмный текст */
+}
+
+.header-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fe5403; /* Ярко-оранжевый */
+    background-color: rgba(35, 36, 39, 0.9); /* Тёмно-серый с прозрачностью */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #fe5403; /* Ярко-оранжевый */
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #232427;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #232427;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #232427;
+}
+
+p, label, input[type="text"] {
+    font-size: 16px;
+    font-weight: normal;
+    color: #232427;
+}
+
+/* Главная страница */
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #edf2f5; /* Светлый серый */
+}
+
+.journey-page {
+    min-height: 100vh;
+    height: auto;
+    padding: 32px 24px 40px;
+    box-sizing: border-box;
+}
+
+.journey-page .header-title {
+    position: static;
+    transform: none;
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.journey-subtitle {
+    max-width: 900px;
+    margin: 0 auto 26px;
+    text-align: center;
+}
+
+.stages-line {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(230px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.stage-card {
+    background-color: #fff9f3;
+    border: 2px solid #fe5403;
+    border-radius: 12px;
+    padding: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.stage-card.is-locked {
+    opacity: 0.7;
+}
+
+.stage-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #232427;
+}
+
+.stage-title {
+    margin: 12px 0 8px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.stage-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.stage-btn {
+    background-color: #fe5403;
+    color: #fff;
+}
+
+.stage-btn:hover:not(:disabled) {
+    background-color: #c85a03;
+}
+
+.stage-btn:disabled {
+    background-color: #b9c3cb;
+    color: #4b5563;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.stage-lock-message {
+    min-height: 42px;
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #8b1c10;
+}
+
+/* Вопросы */
+.questions-container {
+    margin: 20px;
+    font-size: 16px;
+}
+
+.quiz-shell {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 16px 30px;
+}
+
+.mode-label {
+    text-align: center;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.quiz-progress {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.quiz-card {
+    background-color: #fff9f3;
+    border: 1px solid #fe5403;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 16px;
+}
+
+.quiz-option {
+    display: block;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.quiz-type-badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #232427;
+    color: #ffeed9;
+}
+
+.quiz-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.learn-feedback {
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.learn-feedback.is-correct {
+    background-color: #d6f5d8;
+    color: #1f6f27;
+}
+
+.learn-feedback.is-wrong {
+    background-color: #ffe0dc;
+    color: #a02112;
+}
+
+.lesson-card {
+    overflow: hidden;
+}
+
+.lesson-theory {
+    margin: 0 0 16px 18px;
+    padding: 0;
+}
+
+.lesson-theory li {
+    margin-bottom: 8px;
+}
+
+.lesson-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin: 12px 0 16px;
+}
+
+.lesson-images--small {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.lesson-images--vertical {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lesson-images--vertical .lesson-image {
+    max-width: 520px;
+}
+
+.lesson-images--vertical .lesson-image--hero {
+    max-width: none;
+    width: 100%;
+}
+
+.lesson-image {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cbd5df;
+    background-color: #fff;
+    object-fit: cover;
+}
+
+.lesson-activity {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #f3b083;
+    border-radius: 10px;
+    background-color: #fffdfa;
+}
+
+.lesson-activity-question {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.drag-board {
+    display: grid;
+    gap: 12px;
+}
+
+.drag-source,
+.drag-zone {
+    border: 1px dashed #c8d2dc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.drag-zone.is-over {
+    border-color: #fe5403;
+    background-color: #fff7f1;
+}
+
+.drag-source h5,
+.drag-zone h5 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.drag-zone-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 12px;
+    min-height: 240px;
+    align-content: start;
+}
+
+.drag-targets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.drag-card {
+    border: 1px solid #d6dee6;
+    border-radius: 8px;
+    background-color: #f9fbfd;
+    padding: 6px;
+    cursor: grab;
+}
+
+.drag-card.is-dragging {
+    opacity: 0.5;
+}
+
+.drag-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 6px;
+}
+
+.order-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.order-board--vertical {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.order-card {
+    border: 1px solid #d6dee6;
+    border-radius: 10px;
+    background-color: #f9fbfd;
+    padding: 6px;
+    cursor: grab;
+}
+
+.order-card.is-dragging {
+    opacity: 0.5;
+}
+
+.order-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+.image-multi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.image-multi-card {
+    border: 2px solid #d6dee6;
+    border-radius: 10px;
+    background-color: #f9fbfd;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.image-multi-card:hover {
+    border-color: #fe5403;
+}
+
+.image-multi-card.is-selected {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.16);
+    background-color: #f0fdf4;
+}
+
+.image-multi-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.image-label-board {
+    display: grid;
+    gap: 12px;
+}
+
+.text-chip-pool {
+    border: 1px dashed #c8d2dc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.text-chip-pool h5 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.text-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 52px;
+}
+
+.text-chip-list.is-over,
+.image-drop-slot.is-over {
+    border-color: #fe5403;
+    background-color: #fff7f1;
+}
+
+.text-drag-chip {
+    border: 1px solid #d6dee6;
+    border-radius: 8px;
+    background-color: #f9fbfd;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.35;
+    cursor: grab;
+    user-select: none;
+}
+
+.text-drag-chip.is-dragging {
+    opacity: 0.5;
+}
+
+.image-label-targets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+}
+
+.image-label-card {
+    border: 1px solid #d6dee6;
+    border-radius: 10px;
+    background-color: #f9fbfd;
+    padding: 8px;
+}
+
+.image-label-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.image-drop-slot {
+    margin-top: 8px;
+    min-height: 56px;
+    border: 1px dashed #b9c7d3;
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.image-drop-placeholder {
+    margin: auto;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.image-drop-slot.has-label {
+    border-style: solid;
+    border-color: #16a34a;
+    background-color: rgba(22, 163, 74, 0.08);
+}
+
+.image-drop-slot.has-label .image-drop-placeholder {
+    display: none;
+}
+
+.image-drop-slot .text-drag-chip {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.image-drop-slot .text-drag-chip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 62%;
+    height: 10px;
+    border-radius: 2px;
+    background-color: rgba(255, 235, 185, 0.65);
+    border: 1px solid rgba(220, 190, 120, 0.45);
+}
+
+.pair-board {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(170px, 220px));
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.pair-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pair-line {
+    fill: none;
+    stroke: #fe5403;
+    stroke-width: 3;
+    opacity: 0.9;
+}
+
+.pair-line-arrow {
+    fill: #fe5403;
+}
+
+.pair-column h5 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.pair-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+}
+
+.pair-card {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #cbd5df;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #232427;
+    padding: 6px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pair-card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    display: block;
+}
+
+.pair-card.is-selected {
+    border-color: #fe5403;
+    box-shadow: 0 0 0 2px rgba(254, 84, 3, 0.2);
+}
+
+.pair-card.is-paired {
+    border-color: #16a34a;
+    background-color: #f0fdf4;
+}
+
+.pair-helper {
+    margin: 8px 0 6px;
+    font-size: 14px;
+}
+
+.match-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.match-row {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 10px;
+    align-items: center;
+}
+
+.match-left {
+    font-size: 15px;
+}
+
+.match-select,
+.number-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #8499a7;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Кнопки */
+/* Стили для всех кнопок */
+button {
+    padding: 10px 20px;
+    font-family: 'Core Sans A', sans-serif; /* Шрифт для кнопок */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скруглённые углы */
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer; /* Указатель мыши при наведении */
+    transition: background-color 0.3s, transform 0.2s; /* Анимация при наведении */
+}
+/* Кнопка "Пройти ещё раз" */
+#retry-btn {
+    background-color: #f44336; /* Красный цвет */
+    color: #ffffff; /* Белый текст */
+}
+
+#retry-btn:hover {
+    background-color: #d32f2f; /* Тёмно-красный при наведении */
+    transform: scale(1.05); /* Лёгкое увеличение */
+}
+
+/* Кнопка "Перейти на следующий этап" */
+#next-btn {
+    background-color: #4caf50; /* Зелёный цвет */
+    color: #ffffff; /* Белый текст */
+}
+
+#next-btn:hover {
+    background-color: #388e3c; /* Тёмно-зелёный при наведении */
+    transform: scale(1.05); /* Лёгкое увеличение */
+}
+
+/* Общие кнопки */
+button:active {
+    transform: scale(0.95); /* Небольшое уменьшение при нажатии */
+    opacity: 0.9; /* Лёгкая прозрачность при нажатии */
+}
+
+/* Центрирование кнопок на странице */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Расстояние между кнопками */
+    margin-top: 20px;
+}
+
+/* Всплывающее уведомление */
+.notification {
+    position: fixed;
+    top: -50px; /* Начальное положение вне экрана */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff8500; /* Красный цвет для ошибки */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Плавная анимация */
+    display: none; /* Скрываем по умолчанию */
+}
+
+.notification.show {
+    display: block; /* Отображение */
+    top: 20px; /* Видимое положение */
+}
+
+#result-text {
+    font-size: 1.5em; /* Увеличенный размер текста */
+    text-align: center; /* Выравнивание текста по центру (если нужно) */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    font-weight: bold; /* Сделать текст жирным (если нужно) */
+}
+
+.result-image {
+    display: block; /* Для центрирования через margin */
+    margin: 20px auto; /* Отступы сверху/снизу и центрирование по горизонтали */
+    border: 2px solid #fe5403; /* Оранжевая рамка */
+    max-height: 50vh; /* Высота не больше половины экрана */
+    width: auto; /* Ширина задаётся автоматически для сохранения пропорций */
+    border-radius: 8px; /* Закруглённые углы рамки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень для эстетики */
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.4rem;
+        width: calc(100% - 24px);
+    }
+
+    .journey-page {
+        padding: 18px 14px 28px;
+    }
+
+    .stages-line {
+        grid-template-columns: 1fr;
+    }
+
+    .match-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pair-board {
+        grid-template-columns: 1fr;
+    }
+
+    .drag-targets {
+        grid-template-columns: 1fr;
+    }
+}
